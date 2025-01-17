@@ -4,6 +4,7 @@ public class DialUp {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Please input a string:");
+        
         String userString = input.nextLine();
         for (int i = 0; i < userString.length(); i++){
             char ch = userString.charAt(i);
