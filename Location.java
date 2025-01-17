@@ -1,15 +1,26 @@
 import java.util.Scanner;
 
-class GenArr {
-    public static void main(String[] args) {
-    
+public class Location {
+
+    public void setArr(double[][] userArr) {
+        this.userArr = userArr;
     }
+    public double[][] getArr() {
+        return this.userArr;
+    }
+    public static void main(String[] args) {
+        GenArr a = new GenArr();
+        a.setArr(GenArr(popArr));
+    }
+}
+
+class GenArr {
     Scanner input = new Scanner(System.in);
     private double[][] userArr;
     private int row;
     private int col;
 
-    public double[][] getArr() {
+    public double[][] Arr() {
         
         System.out.println("Enter the number of rows and columns in the array:");
         String rc = input.nextLine();
@@ -20,8 +31,7 @@ class GenArr {
         userArr = new double[row][col];
         return userArr;
     }
-
-    public double[][] popArr() {
+    public double[][] popArr(double[][] userArr) {
         System.out.println("Enter the array with " + (row * col) + " numbers of varying size:");
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
@@ -30,20 +40,5 @@ class GenArr {
             }
         }
         return userArr;
-    }
-}    
-
-class Locate {
-    public static void locateLargest(double[][] userArr){
-        double num = 0;
-        for (int i = 0; i < userArr.length; i++) {
-            for (int j = 0; j < userArr[i].length; j++) {
-                if (userArr[i][j] > num) {
-                    num = userArr[i][j];
-                }
-            }
-        }
-        double location = indexOf(userArr, num);
-        System.out.println("The largest number is " + num + " and is located at " + location);
     }
 }
