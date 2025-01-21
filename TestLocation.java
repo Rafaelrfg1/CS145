@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 class Location {
 
-    int row;
-    int column;
-    double maxValue;
+    private int row;
+    private int column;
+    private double maxValue;
 
     // Constructor
     public Location(int row, int column, double maxValue) {
@@ -14,6 +14,16 @@ class Location {
         this.maxValue = maxValue;
     }
 
+    public int getRow() {
+        return this.row;
+    }
+    public int getColumn() {
+        return this.column;
+    }
+    public double getMaxValue() {
+        return this.maxValue;
+    }
+    
     // Method to find the largest element in a 2D array
     public static Location locateLargest(double[][] userArr) {
         int maxRow = 0;
@@ -55,7 +65,7 @@ public class TestLocation {
 
         // Find and display the largest element
         Location location = Location.locateLargest(userArr);
-        System.out.println("The location of the largest element " + location.maxValue + " is at (" + location.row + ", " + location.column + ")");
+        System.out.println("The location of the largest element " + location.getMaxValue() + " is at (" + location.getRow() + ", " + location.getColumn() + ")");
 
     }
 }
